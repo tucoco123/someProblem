@@ -57,4 +57,4 @@ Xcode之後會拋棄舊式的compiler，更改設定在Xcode=>File=>Workspace Se
 
 結果隔天母公司有人更新了package.json，把react-native-Firebase更新到了最新版，拉新code之後，pod install又裝不起來了，嗚嗚嗚 〒.〒 
 
-錯誤訊息大概就是新套件要用到Firebase/Core 7.6.0，但是本地端cocoapods找不到，輸入pod update repo也不起作用，本來想說去 ~/.cocoapods/repos更新要用的套件就好了，結果打了指令還是不能更新...，最後是把[cocoapods整個移除重新安裝一次](https://stackoverflow.com/questions/43701352/what-exactly-does-pod-repo-update-do)，然後在podfile新增 pod 'Firebase/Core','7.6.0'，再一次pod install終於載到新版本的Firebase/Core，但是把這行從podfile移除掉又變不行裝...，明明本地端已經確定裝到最新版，照理說應該不用加這行也可以運行，反正我的任務只是要讓app跑得起來就好，其他就算了哈哈。
+錯誤訊息大概就是新套件要用到Firebase/Core 7.6.0，但是本地端cocoapods找不到，輸入pod update repo也不起作用，本來想說去 ~/.cocoapods/repos更新要用的套件就好了，結果打了指令還是不能更新...，最後是把[cocoapods整個移除重新安裝一次](https://stackoverflow.com/questions/43701352/what-exactly-does-pod-repo-update-do)，然後在podfile新增 pod 'Firebase/Core','7.6.0'，再一次pod install終於載到新版本的Firebase/Core，但是把這行從podfile移除掉又變不行裝...，明明本地端已經確定裝到最新版，照理說應該不用加這行也可以運行，反正目前可以build開始開發就好了XD。
